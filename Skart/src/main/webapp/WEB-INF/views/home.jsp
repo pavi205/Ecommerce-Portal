@@ -7,19 +7,21 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core"  prefix="c" %>
 <title>HOME</title>
+
 </head>
 <body>
 
 <div class="container text-center">
+<div class="jumbotron">
 
-		<div class="jumbotron">
-			<h1>Mobiles On Brand</h1>
-
-
+<br	/>		
+	
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -48,7 +50,7 @@
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href=signup><span
 					class="glyphicon glyphicon-user"></span>Sign Up</a></li>
-			<li><a href=login>HELLO ${name}</a></li>
+			<li><a href=login>${name}</a></li>
 		</ul>
 	</div>
 	
@@ -59,6 +61,7 @@
 <div class="row">
 
 	<div class="col-sm-6">
+	
 	<img src="<c:url value="/resource/latest-mobiles.jpg"/>" alt="Redmi" width="500" height="345" >
 	
 	</div>

@@ -7,11 +7,11 @@ public interface Supplierdao {
 	
 		public List<Supplier> list();
 		
-		/*public void delete(String id);
+		public void delete(String id);
 		
 		public Supplier get(String id);
 		
-		public void saveOrUpdate(Supplier supplier);*/
+		public void saveOrUpdate(Supplier supplier);
 
 
 	}

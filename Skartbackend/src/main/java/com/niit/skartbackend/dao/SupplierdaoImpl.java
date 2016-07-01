@@ -44,7 +44,7 @@ public class SupplierdaoImpl implements Supplierdao {
 
 		
 
-	/*	@Transactional
+		@Transactional
 		public void saveOrUpdate(Supplier supplier) {
 			
 			System.out.println("am in save or update");
@@ -73,7 +73,7 @@ public class SupplierdaoImpl implements Supplierdao {
 
 			return null;
 		}
-*/
+
 	}
 
 	

@@ -25,12 +25,12 @@ static AnnotationConfigApplicationContext context;
 		
 		Supplierdao supplierdao = (Supplierdao) context.getBean("supplierDao");
 		
-	/*	supp.setId("TAB_003");
+		supp.setId("TAB_003");
 		supp.setName("Tablet");
 		supp.setDescription("Tablet product");
 		
 		
-		supplierdao.saveOrUpdate(supp);*/
+		supplierdao.saveOrUpdate(supp);
 	
 		
 		List<Supplier> list = new ArrayList<Supplier>();

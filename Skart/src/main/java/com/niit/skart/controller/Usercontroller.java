@@ -11,9 +11,7 @@ import com.niit.skart.dao.Userdao;
 
 @Controller
 public class Usercontroller {
-	
-	
-	
+
 	@Autowired
 		Userdao userdao;
 	
@@ -86,12 +84,7 @@ public class Usercontroller {
 	
 	}
 	
-	@RequestMapping("/inc")
-	public String gotoinc() {
-		return "inc";
-	
-	}
-	
+		
 	@RequestMapping("/adminhome")
 	public String gotoadminhome() {
 		return "adminhome";

@@ -17,9 +17,12 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
 import com.niit.skartbackend.model.Category;
+import com.niit.skartbackend.model.Product;
 import com.niit.skartbackend.model.Supplier;
 import com.niit.skartbackend.dao.Categorydao;
 import com.niit.skartbackend.dao.CategorydaoImpl;
+import com.niit.skartbackend.dao.Productdao;
+import com.niit.skartbackend.dao.ProductdaoImpl;
 import com.niit.skartbackend.dao.Supplierdao;
 import com.niit.skartbackend.dao.SupplierdaoImpl;
 
@@ -35,9 +38,9 @@ public class ApplicationContextConfig {
     public DataSource getDataSource() {
     	BasicDataSource dataSource = new BasicDataSource();
     	dataSource.setDriverClassName("org.h2.Driver");
-    	dataSource.setUrl("jdbc:h2:tcp://localhost/~/test");
-    	dataSource.setUsername("sa");
-    	dataSource.setPassword("");
+    	dataSource.setUrl("jdbc:h2:tcp://localhost/~/pavi");
+    	dataSource.setUsername("pavi");
+    	dataSource.setPassword("pavi");
     	
     	return dataSource;
     }
@@ -58,6 +61,7 @@ public class ApplicationContextConfig {
     	sessionBuilder.addProperties(getHibernateProperties());
     	sessionBuilder.addAnnotatedClasses(Category.class);
     	sessionBuilder.addAnnotatedClasses(Supplier.class);
+    	sessionBuilder.addAnnotatedClasses(Product.class);
     	
     	return sessionBuilder.buildSessionFactory();
     }
@@ -82,6 +86,13 @@ public class ApplicationContextConfig {
         @Bean(name = "supplierDao")
         public Supplierdao getSupplierDao(SessionFactory sessionFactory) {
         	return new SupplierdaoImpl(sessionFactory);
+   
+    	}
+
+    	@Autowired
+        @Bean(name = "productDao")
+        public Productdao getProductDao(SessionFactory sessionFactory) {
+        	return new ProductdaoImpl(sessionFactory);
    
     	}
 

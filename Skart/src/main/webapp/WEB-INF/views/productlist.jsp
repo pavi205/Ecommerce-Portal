@@ -13,14 +13,14 @@
 <%@ page isELIgnored="false"%>
 <%@ page session="false"%>
 
-<title>SUPPLIER LIST</title>
+<title>PRODUCT LIST</title>
 </head>
 <body>
 
 <div class="container text-center">
 
 		<div class="jumbotron">
-			<p>Mobile On Brand</p>
+			<h1>Mobile On Brand</h1>
 
 	<nav class="navbar navbar-inverse">
 	<div class="container-fluid">
@@ -38,21 +38,22 @@
 		</ul>
 	</div>
 	</nav>
-	${message}
 	
 	<a href ="categorylist">Categories</a> | <a href="productlist">Products</a> | <a href ="supplierlist">Suppliers</a>
-	<p>Add a Supplier</p>
+	
+	${message}
+	<h1>Add a Product</h1>
 
-	<c:url var="addAction" value="/supplierlist/add"></c:url>
+	<c:url var="addAction" value="/productlist/add"></c:url>
 
-	<form:form action="${addAction}" commandName="supplier">
+	<form:form action="${addAction}" commandName="product">
 		<table>
 			<tr>
 				<td><form:label path="id">
 						<spring:message text="ID" />
 					</form:label></td>
 				<c:choose>
-					<c:when test="${!empty supplier.id}">
+					<c:when test="${!empty product.id}">
 						<td><form:input path="id" disabled="true" readonly="true" />
 						</td>
 					</c:when>
@@ -68,18 +69,13 @@
 					</form:label></td>
 				<td><form:input path="name" required="true" /></td>
 			</tr>
+			
 			<tr>
-				<td><form:label path="description">
-						<spring:message text="Description" />
-					</form:label></td>
-				<td><form:input path="description" required="true" /></td>
-			</tr>
-			<tr>
-				<td colspan="2"><c:if test="${!empty supplier.name}">
+				<td colspan="2"><c:if test="${!empty product.name}">
 						<input type="submit"
-							value="<spring:message text="Edit Supplier"/>" />
-					</c:if> <c:if test="${empty supplier.name}">
-						<input type="submit" value="<spring:message text="Add Supplier"/>" />
+							value="<spring:message text="Edit Product"/>" />
+					</c:if> <c:if test="${empty product.name}">
+						<input type="submit" value="<spring:message text="Add Product"/>" />
 					</c:if></td>
 			</tr>
 		</table>
@@ -87,7 +83,7 @@
 	<br>
 
 	
-	<p>SUPPLIER LIST</p>
+	<p>GET ALL Product</p>
 
 <div class="row">
 			<div class="col-md-6">
@@ -99,19 +95,19 @@
 						    <th>SI NO</th>
 							<th>ID</th>
 							<th>Name</th>
-							<th>Description</th>
+					
 						</tr>
 					</thead>
 					<tbody>
 					
-					<c:forEach items="${supplierList}" var="supplier" varStatus="status">
+					<c:forEach items="${productList}" var="product" varStatus="status">
 					<tr>
 			<td>${status.count}</td>
-			<td>${supplier.id}</td>
-			<td>${supplier.name}</td>
-			<td>${supplier.description}</td>
-			<td><a href="<c:url value='supplierlist/edit/${supplier.id}' />">Edit</a></td>
-			<td><a href="<c:url value='supplierlist/remove/${supplier.id}' />">Delete</a></td>
+			<td>${product.id}</td>
+			<td>${product.name}</td>
+		
+			<td><a href="<c:url value='productlist/edit/${product.id}' />">Edit</a></td>
+			<td><a href="<c:url value='productlist/remove/${product.id}' />">Delete</a></td>
 						</tr>
 					 </c:forEach>  
 					</tbody>
